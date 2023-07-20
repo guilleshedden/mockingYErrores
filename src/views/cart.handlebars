@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center align-items-center flex-column h-100">
+    <h1 class="mb-5">CARRITO</h1>
+    <div class="w-100 px-4">
+        {{#if products.length}}
+        <table class="table table-striped table-dark">
+          <thead class="text-center">
+            <tr>
+              <th scope="col">#ID</th>
+              <th scope="col">nombre</th>
+              <th scope="col">codigo</th>
+              <th scope="col">precio</th>
+              <th scope="col">categoria</th>
+              <th scope="col">descripcion</th>
+              <th scope="col">imagenes</th>
+              <th scope="col">cantidad</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            {{#each products}}
+            <tr>
+              <th scope="row">{{this.product._id}}</th>
+              <td>{{this.product.title}}</td>
+              <td>{{this.product.code}}</td>
+              <td>{{this.product.price}}</td>
+              <td>{{this.product.category}}</td>
+              <td>{{this.product.description}}</td>
+              <td>{{this.product.thumbnail}}</td>
+              <td>{{this.cantidad}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        {{else}}
+        <h3>El carrito esta vacio!</h3>
+        {{/if}}
+    </div>
+
+</div>

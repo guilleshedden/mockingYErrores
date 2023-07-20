@@ -1,0 +1,46 @@
+[
+	{
+	  	"id": 1,
+	  	"title": "Camiseta Argentina",
+	  	"description": "Camiseta Argentina Pre Match 2022",
+	  	"code": 9999,
+	  	"price": 3000,
+	  	"stock": 25,
+	  	"category": "Camisetas",
+	  	"thumbnail": "https://res.cloudinary.com/dt0wab3c0/image/upload/v1666807793/FAG%20-%20Tienda%20futbolera/Camiseta_Argentina_Pre_Match_2022_ppphja.jpg",
+	  	"status": true
+	},
+	{
+	  	"id": 2,
+	  	"title": "Buzo Boca",
+	  	"description": "Buzo Boca Algodon 2022",
+	  	"code": 9998,
+	  	"price": 7000,
+	  	"stock": 10,
+	  	"category": "Buzos",
+	  	"thumbnail": "https://res.cloudinary.com/dt0wab3c0/image/upload/v1666808044/FAG%20-%20Tienda%20futbolera/Buzo_Boca_Algodon_2022_ojeudp.jpg",  
+	  	"status": true
+	},
+	{
+	  	"id": 4,
+	  	"title": "Camiseta Boca Retro",
+	  	"description": "Camiseta Boca Retro Original adidas",
+	  	"code": 9996,
+	  	"price": 5500,
+	  	"stock": 30,
+	  	"category": "Camisetas",
+	  	"thumbnail": "https://res.cloudinary.com/dt0wab3c0/image/upload/v1666976248/FAG%20-%20Tienda%20futbolera/Camise_Boca_Retro_kriveu.jpg",  
+	  	"status": true
+	},
+	{
+	  	"id": 5,
+	  	"title": "Camiseta River Titular",
+	  	"description": "Camiseta River Titular 2022",
+	  	"stock": 8,
+	  	"price": 4500,
+	  	"code": 9995,
+	  	"category": "Camisetas",
+	  	"thumbnail": "https://res.cloudinary.com/dt0wab3c0/image/upload/v1666976355/FAG%20-%20Tienda%20futbolera/Camise_River_Titular_2022_pmsvs1.jpg",
+	  	"status": true
+	}
+]

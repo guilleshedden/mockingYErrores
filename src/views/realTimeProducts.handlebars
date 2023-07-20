@@ -1,0 +1,100 @@
+<nav class="navbar navbar-light bg-dark px-3">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <div class="d-flex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-person-fill my-auto" viewBox="0 0 16 16">
+      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+      {{#if user}}
+      <div class="d-flex flex-column mx-2">
+        <p class="m-0 text-white" style="font-size: 15px">{{user.username}}</p>
+        <p class="m-0 text-white" style="font-size: 12px">{{user.email}} </p>
+        <p class="m-0 text-white" style="font-size: 12px">role:{{user.role}} </p>
+      </div>
+      <button class="btn btn-warning h-50 my-auto"><a href="/api/session/logout" class="text-decoration-none text-dark">Log out</a></button>
+      {{else}}
+      <div>
+      <button class="btn btn-warning mx-2"><a href="/api/session/login" class="text-decoration-none text-dark">Log In</a></button>
+      </div>
+      {{/if}}
+
+  </div>
+
+</nav>
+<div class="d-flex justify-content-center align-items-center flex-column">
+
+  <h1 class="mb-5">{{title}}</h1>
+  <div class="w-100 px-4">
+    {{#if products.length}}
+    <table id="tableProduct" class="table table-striped table-dark">
+
+      <thead class="text-center">
+        <tr>
+          <th scope="col">#ID</th>
+          <th scope="col">nombre</th>
+          <th scope="col">codigo</th>
+          <th scope="col">precio</th>
+          <th scope="col">categoria</th>
+          <th scope="col">descripcion</th>
+          <th scope="col">stock</th>
+          <th scope="col">imagenes</th>
+        </tr>
+      </thead>
+
+      <tbody class="text-center">
+        {{#each products}}
+        <tr>
+          <td>{{this._id}}</td>
+          <td>{{this.title}}</td>
+          <td>{{this.code}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.category}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.stock}}</td>
+          <td>{{this.thumbnail}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+    <div id="pages" class="d-flex align-items-center justify-content-center mb-5">
+          {{#if hasPrevPage}}
+          <a href="{{prevLink}}"><button class="btn btn-warning rounded-0">anterior</button></a>
+          {{/if}}
+
+          {{#if hasNextPage}}
+          <a href="{{nextLink}}"><button class="btn btn-warning rounded-0">siguiente</button></a>
+          {{/if}}
+    </div>
+    {{else}}
+    <h3>No hayproductos para mostrar!</h3>
+    {{/if}}
+  </div>
+
+  <div class="w-100 px-4">
+    <form id="formDelete" class="bg-dark d-flex justify-content-around align-items-center p-2">
+      <h3 class="mb-2 text-white">Borrar producto</h3>
+      <input type="text" required id="deleteId" name="deleteProd" placeholder="Ingrese el ID" class="form-control rounded-0 w-50">
+      <input class="btn btn-danger rounded-0" type="submit" value="Eliminar">
+    </form>
+  </div>
+
+  <div class="w-100 px-4">
+    <form id="addForm" class="bg-dark d-flex flex-column justify-content-around align-items-center" action="">
+      <h3 class="my-5 text-white">Agregar Producto</h3>
+      <input type="text" required id="title" name="title" placeholder="Ingrese el nombre" class="form-control rounded-0 mb-3 w-75">
+      <input type="number" required id="price" name="price" placeholder="Ingrese el precio" class="form-control rounded-0 mb-3 w-75">
+      <input type="text" required id="code" name="code" placeholder="Ingrese el code" class="form-control rounded-0 mb-3 w-75">
+      <input type="number" required id="stock" name="stock" placeholder="Ingrese el stock" class="form-control rounded-0 mb-3 w-75">
+      <input type="text" required id="category" name="categoty" placeholder="Ingrese la categoria" class="form-control rounded-0 mb-3 w-75">
+      <input type="text" required id="description" name="description" placeholder="Ingrese la descripcion" class="form-control rounded-0 mb-3 w-75">
+      <input type="text" id="thumbnail" name="thumbnail"  placeholder="Ingrese ruta de imagen" class="form-control rounded-0 mb-3 w-75"><br>
+      <input class="btn btn-warning rounded-0 mb-3 w-75" type="submit" value="Agregar">
+    </form>
+  </div>
+
+
+</div>
+
+
+<script src="/socket.io/socket.io.min.js"></script>
+<script src="/static/js/realTimeProducts.js"></script>
+<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js "></script>
